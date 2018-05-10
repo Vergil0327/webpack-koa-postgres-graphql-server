@@ -1,4 +1,4 @@
-# Koa-Postgres-GraphQL Server
+# Webpack-Koa-Postgres-GraphQL Server
 
 ## Quick View
 
