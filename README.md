@@ -6,7 +6,7 @@
 <br />
 
 ### Run Docker
-#### run command `Docker-compose up -d`
+#### run command `docker-compose up -d`
 #### postgres db will listen on 5432
 #### graphql api server will listen on port 8087
 
