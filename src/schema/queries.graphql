@@ -1,0 +1,7 @@
+# ? Relative path start from src/schema. But why ?
+# import { User } from 'user/user.graphql'
+
+type Query {
+  hi: String
+  user(name: String): User
+}

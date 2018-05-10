@@ -1,0 +1,9 @@
+# * Lesson From Source Code
+# ? Path relative to root folder for importing files. But why?
+# ! file extenstion must be `.graphql`. Can't be `.gql` (graphql-import-loader will check this!)
+
+# import { Query } from 'src/schema/queries.graphql'
+
+type schema {
+  query: Query
+}

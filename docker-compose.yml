@@ -1,0 +1,31 @@
+version: "3"
+services:
+  graphql-dev:
+    build:
+      context: .
+    image: graphql-api:latest
+    container_name: graphql-api
+    env_file: config/.env
+    depends_on:
+      - db
+    environment:
+      - NODE_ENV=development
+      - DEBUG=dev:*
+
+      # POSTGRES_HOST must point to db service of docker-compose.yml (Use it for knexfile)
+      # ref: https://stackoverflow.com/questions/33357567/econnrefused-for-postgres-on-nodejs-with-dockers
+      - POSTGRES_HOST=db
+    ports:
+      - 8087:3002
+  db:
+    build: ./db
+    image: postgres-db:latest
+    container_name: postgres-db
+    env_file: config/.env
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+volumes:
+  postgres-db:
+    driver: local
